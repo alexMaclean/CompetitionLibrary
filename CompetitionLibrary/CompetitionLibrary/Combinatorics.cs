@@ -55,7 +55,7 @@ class Combinatorics
 
             for (int i = k - 1; i >= 0; --i) {
                 if (indices[i] < n - k + i) {
-                    indices[i] += 1;
+                    ++indices[i];
 
                     for (int j = i + 1; j < k; ++j) {
                         indices[j] = indices[i] + j - i;
