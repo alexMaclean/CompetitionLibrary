@@ -54,11 +54,11 @@ class Combinatorics
             nextSubset: result.Add(indices.Select(i => list[i]).ToList());
 
             for (int i = k - 1; i >= 0; --i) {
-                if (indices[i] < n - k + i) {
+                if (indices[i] != n - k + i) {
                     ++indices[i];
 
                     for (int j = i + 1; j < k; ++j) {
-                        indices[j] = indices[i] + j - i;
+                        indices[j] = indices[j - 1] + 1;
                     }
 
                     goto nextSubset;
