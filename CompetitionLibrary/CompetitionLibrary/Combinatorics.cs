@@ -7,9 +7,9 @@ class Combinatorics
     /// <summary>
     /// Returns factorial of n.
     /// </summary>
-    public static BigInteger factorial(BigInteger n)
+    public static BigInteger Factorial(BigInteger n)
     {
-        return n == 0 ? 1 : factorial(n - 1) * n;
+        return n == 0 ? 1 : Factorial(n - 1) * n;
     }
 
     /// <summary>
@@ -17,7 +17,7 @@ class Combinatorics
     /// </summary>
     public static BigInteger BinomialCoefficient(BigInteger n, BigInteger k)
     {
-        return factorial(n) / (factorial(n - k) * factorial(k));
+        return Factorial(n) / (Factorial(n - k) * Factorial(k));
     }
 
     /// <summary>
