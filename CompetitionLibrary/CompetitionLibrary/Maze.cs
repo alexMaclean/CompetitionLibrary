@@ -43,7 +43,7 @@ class Maze
     /// 
     /// I tested this function with Pac-Dude (and it worked) and on self-made maze's.
     /// </summary>
-    public static List<Tuple<int, int, List<Tuple<int, int>>>> SolveMaze(char[,] maze, int row, int column, List<char> cantPass, char pathChar = '\0', bool printMaze = false, char reachChar = '\0')
+    public static List<Tuple<int, int, List<Tuple<int, int>>>> SolveMaze(char[,] maze, int row, int column, List<char> cantPass, char pathChar = '\x00', bool printMaze = false, char reachChar = '\x01')
     {
         var neighbors = new MazeField[4];
 
@@ -59,7 +59,7 @@ class Maze
         maze[row, column] = pathChar;
 
         for (int i = 0; i < neighbors.Length; ++i) {
-            if (reachChar != '\0' && neighbors[i] == null) {
+            if (reachChar != '\x01' && neighbors[i] == null) {
                 continue;
             }
 
