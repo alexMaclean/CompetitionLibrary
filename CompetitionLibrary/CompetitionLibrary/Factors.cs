@@ -38,4 +38,26 @@
             }
         }
     }
+    
+    /// <summary>
+    /// Returns list of prime factors of number n.
+    /// </summary>
+    public static List<int> GetPrimeFactors(int n)
+    {
+        var result = new List<int>();
+
+        for (int i = 2; !IsPrime(n); ++i) {
+            if (!IsPrime(i)) {
+                continue;
+            }
+
+            if (n % i == 0) {
+                result.Add(i);
+                n /= i--;
+            }
+        }
+        result.Add(n);
+
+        return result;
+    }
 }
